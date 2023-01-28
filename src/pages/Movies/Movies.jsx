@@ -1,9 +1,21 @@
 // import { useState, useEffect } from 'react';
 
 export const Movies = () => {
-//   const [movies, setMovies] = useState([]);
+    const inputChange = () => {};
 
-//   useEffect(() => {}, []);
-
-  return <>Movies</>;
+    const handleSubmit = () => {};
+  return (
+    <Box>
+      <Form onSubmit={handleSubmit}>
+        <Button type="submit"></Button>
+        <Input
+          onChange={inputChange}
+          type="text"
+          autoComplete="off"
+          autoFocus
+          placeholder="Search movies"
+        />
+      </Form>
+    </Box>
+  );;
 };
