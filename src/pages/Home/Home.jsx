@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Box, Title } from './Home.styled';
+import { Box, Title, List, Item, NavItem } from './Home.styled';
 import { getTrendingMovies } from 'services/api';
 
 export const Home = () => {
@@ -30,6 +30,7 @@ export const Home = () => {
             </Item>
           );
         })}
+        ;
       </List>
     </Box>
   );

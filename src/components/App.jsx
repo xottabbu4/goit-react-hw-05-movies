@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import { GlobalStyleComponent } from 'styles/GlobalStyles';
 import { Layout } from 'components/Layout/Layout';
+import { Movies } from 'pages/Movies/Movies';
+import { Home } from 'pages/Home/Home';
+import { GlobalStyleComponent } from 'styles/GlobalStyles';
 
 export const App = () => {
   return (

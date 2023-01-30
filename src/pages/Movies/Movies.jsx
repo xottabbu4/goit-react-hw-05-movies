@@ -1,4 +1,5 @@
 // import { useState, useEffect } from 'react';
+import { Box, Form, Button, Input } from './Movies.styled';
 
 export const Movies = () => {
     const inputChange = () => {};

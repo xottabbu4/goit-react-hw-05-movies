@@ -1,17 +1,11 @@
 import styled from 'styled-components';
 
-export const Main = styled.main`
-  padding: 48px 16px;
-  max-width: 1240px;
-  margin: 0 auto;
-`;
-
-export const BoxForm = styled.div`
+export const Box = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 64px;
-  margin-bottom: 48px;
+  padding: 48px 16px;
   color: #ffffff;
 `;
 
@@ -21,7 +15,7 @@ export const Form = styled.form`
   width: 100%;
   max-width: 600px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 3px;
   overflow: hidden;
 `;
 
@@ -48,7 +42,6 @@ export const Input = styled.input`
   outline: none;
   padding-left: 16px;
   padding-right: 16px;
-
   ::placeholder {
     font: inherit;
     font-size: 18px;
