@@ -18,6 +18,7 @@ export const ButtonGoBack = styled(Link)`
   outline: none;
   text-transform: uppercase;
   margin-bottom: 16px;
+
   :hover,
   :focus {
     background-color: #dc1818;
@@ -65,12 +66,13 @@ export const OverviewInfo = styled.p`
 
 export const Title = styled.h3`
   margin-bottom: 16px;
-`
+`;
 
 export const LinkItem = styled(Link)`
   color: #000000;
   display: inline-block;
   margin-bottom: 16px;
+
   :hover,
   :focus {
     color: #dc1818;
