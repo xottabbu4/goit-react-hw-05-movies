@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { getMovieById } from 'services/api';
 import { Loader } from 'components/Loader/Loader';
 import {
@@ -22,7 +21,6 @@ export default function MovieDetails() {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
-  console.log(location.state);
 
   const { movieId } = useParams();
 

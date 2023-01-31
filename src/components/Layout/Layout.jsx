@@ -6,9 +6,7 @@ export default function Layout() {
   return (
     <Box>
       <AppBar />
-      <Suspense fallback={<Loader />}>
         <Outlet />
-      </Suspense>
     </Box>
   );
 };
