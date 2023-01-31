@@ -1,5 +1,5 @@
-import { useState, useEffect, Suspense } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieById } from 'services/api';
 import { Loader } from 'components/Loader/Loader';
@@ -21,6 +21,8 @@ export default function MovieDetails() {
   const [movieDetails, setMovieDetails] = useState({});
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+  console.log(location.state);
 
   const { movieId } = useParams();
 
@@ -67,7 +69,9 @@ export default function MovieDetails() {
             <Loader />
           ) : (
             <>
-              <ButtonGoBack type="button">Go back</ButtonGoBack>
+              <ButtonGoBack to={location.state?.from ?? '/'}>
+                Go back
+              </ButtonGoBack>
               <MovieBox>
                 <Img
                   src={
@@ -90,16 +94,24 @@ export default function MovieDetails() {
                 <Title>Additional information</Title>
                 <ul>
                   <li>
-                    <LinkItem to="cast">Cast</LinkItem>
+                  <LinkItem
+                      to="cast"
+                      state={{ from: location.state?.from ?? '/' }}
+                    >
+                      Cast
+                    </LinkItem>
                   </li>
                   <li>
-                    <LinkItem to="reviews">Reviews</LinkItem>
+                  <LinkItem
+                      to="reviews"
+                      state={{ from: location.state?.from ?? '/' }}
+                    >
+                      Reviews
+                    </LinkItem>
                   </li>
                 </ul>
               </div>
-              <Suspense fallback={<Loader />}>
-                <Outlet />
-              </Suspense>
+              <Outlet />
             </>
           )}
         </Box>
