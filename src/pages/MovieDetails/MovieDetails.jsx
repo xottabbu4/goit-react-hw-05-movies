@@ -1,3 +1,4 @@
+import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieById } from 'services/api';
@@ -11,14 +12,12 @@ import {
   Rating,
   Overview,
   OverviewInfo,
-  Genres,
-  Details,
-  InfoTitle,
+  Title,
   LinkItem,
   Error,
 } from './MovieDetails.styled';
 
-export const MovieDetails = () => {
+export default function MovieDetails() {
   const [movieDetails, setMovieDetails] = useState({});
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -83,12 +82,12 @@ export const MovieDetails = () => {
                   <Rating>Rating: {vote_average || 'Not found'}</Rating>
                   <Overview>Overview:</Overview>
                   <OverviewInfo>{overview || 'Not found'}</OverviewInfo>
-                  <Genres>Genres:</Genres>
+                  <Title>Genres:</Title>
                   <p>{genres || 'Others'}</p>
                 </div>
               </MovieBox>
-              <Details>
-                <InfoTitle>Additional information</InfoTitle>
+              <div>
+                <Title>Additional information</Title>
                 <ul>
                   <li>
                     <LinkItem to="cast">Cast</LinkItem>
@@ -97,8 +96,10 @@ export const MovieDetails = () => {
                     <LinkItem to="reviews">Reviews</LinkItem>
                   </li>
                 </ul>
-              </Details>
-              <Outlet />
+              </div>
+              <Suspense fallback={<Loader />}>
+                <Outlet />
+              </Suspense>
             </>
           )}
         </Box>

@@ -2,11 +2,13 @@ import { AppBar } from 'components/AppBar/AppBar';
 import { Box } from './Layout.styled';
 import { Outlet } from 'react-router-dom';
 
-export const Layout = () => {
+export default function Layout() {
   return (
     <Box>
       <AppBar />
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </Box>
   );
 };

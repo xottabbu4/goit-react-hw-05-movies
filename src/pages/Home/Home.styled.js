@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 export const Box = styled.main`
   padding: 48px 16px;
@@ -15,21 +15,21 @@ export const Title = styled.h1`
   margin-bottom: 32px;
 `;
 
-export const List = styled.ul`
-font-size: 20px;
-`;
+// export const List = styled.ul`
+// font-size: 20px;
+// `;
 
-export const Item = styled.li`
-  margin-bottom: 16px;
-`;
+// export const Item = styled.li`
+//   margin-bottom: 16px;
+// `;
 
-export const NavItem = styled(NavLink)`
-  color: #000000;
-  border-radius: 5px;
-  padding: 6px 12px;
-  display: inline-block;
-  :hover,
-  :focus {
-    color: #dc1818;
-  }
-`;
+// export const NavItem = styled(NavLink)`
+//   color: #000000;
+//   border-radius: 5px;
+//   padding: 6px 12px;
+//   display: inline-block;
+//   :hover,
+//   :focus {
+//     color: #dc1818;
+//   }
+// `;
